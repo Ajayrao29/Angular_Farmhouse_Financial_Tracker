@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.table {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.btn {
+  border-radius: 4px;
+}

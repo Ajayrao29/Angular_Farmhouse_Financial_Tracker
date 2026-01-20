@@ -1,0 +1,71 @@
+<div class="card mt-3">
+  <div class="card-header">
+    <h4>{{ isEditMode ? 'Edit' : 'Add New' }} Transaction</h4>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="propertyId" class="form-label">Property</label>
+          <select id="propertyId" class="form-select" formControlName="propertyId">
+            <option value="">Select Property</option>
+            <option *ngFor="let property of properties" [value]="property.id">
+              {{ property.name }}
+            </option>
+          </select>
+          <div class="text-danger" *ngIf="transactionForm.get('propertyId')?.invalid && transactionForm.get('propertyId')?.touched">
+            Property is required
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="type" class="form-label">Type</label>
+          <select id="type" class="form-select" formControlName="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="category" class="form-label">Category</label>
+          <input type="text" id="category" class="form-control" formControlName="category" placeholder="e.g., booking, maintenance">
+          <div class="text-danger" *ngIf="transactionForm.get('category')?.invalid && transactionForm.get('category')?.touched">
+            Category is required
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="amount" class="form-label">Amount (₹)</label>
+          <input type="number" id="amount" class="form-control" formControlName="amount" placeholder="0">
+          <div class="text-danger" *ngIf="transactionForm.get('amount')?.invalid && transactionForm.get('amount')?.touched">
+            Valid amount is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input type="date" id="date" class="form-control" formControlName="date">
+          <div class="text-danger" *ngIf="transactionForm.get('date')?.invalid && transactionForm.get('date')?.touched">
+            Date is required
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="text" id="description" class="form-control" formControlName="description" placeholder="Brief description">
+          <div class="text-danger" *ngIf="transactionForm.get('description')?.invalid && transactionForm.get('description')?.touched">
+            Description is required
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="transactionForm.invalid">
+        {{ isEditMode ? 'Update' : 'Save' }} Transaction
+      </button>
+    </form>
+  </div>
+</div>

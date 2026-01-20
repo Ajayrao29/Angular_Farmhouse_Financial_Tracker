@@ -1,0 +1,64 @@
+<div class="container mt-4">
+  <h2>Financial Dashboard</h2>
+
+  <div class="row mb-4 align-items-center">
+    <div class="col-md-6">
+      <app-property-selector (propertyChanged)="onPropertyChange($event)"></app-property-selector>
+    </div>
+    <div class="col-md-6">
+      <label for="timeRange" class="form-label me-2">Time Range:</label>
+      <select id="timeRange" class="form-select d-inline-block w-auto" [(ngModel)]="timeRange"
+        (change)="onTimeRangeChange()">
+        <option value="all">All Time</option>
+        <option value="month">This Month</option>
+        <option value="quarter">This Quarter</option>
+        <option value="year">This Year</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card text-white bg-success mb-3">
+        <div class="card-header">Total Income</div>
+        <div class="card-body">
+          <h3 class="card-title">₹{{ totalIncome | number }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-white bg-danger mb-3">
+        <div class="card-header">Total Expense</div>
+        <div class="card-body">
+          <h3 class="card-title">₹{{ totalExpense | number }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-white mb-3" [ngClass]="netProfit >= 0 ? 'bg-primary' : 'bg-warning'">
+        <div class="card-header">Net Profit</div>
+        <div class="card-body">
+          <h3 class="card-title">₹{{ netProfit | number }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-header">Cash Flow Analysis</div>
+        <div class="card-body">
+          <canvas baseChart [data]="barChartData" [options]="barChartOptions" [type]="barChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <a routerLink="/transactions" class="btn btn-primary me-2">Manage Transactions</a>
+    <a routerLink="/reports" class="btn btn-secondary">View Reports</a>
+  </div>
+</div>

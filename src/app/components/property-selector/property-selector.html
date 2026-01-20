@@ -1,0 +1,13 @@
+<div class="property-selector mb-3">
+  <label for="propertySelect" class="form-label">Select Property:</label>
+  <select 
+    id="propertySelect" 
+    class="form-select" 
+    [(ngModel)]="selectedPropertyId" 
+    (change)="onPropertyChange()">
+    <option [value]="0">All Properties</option>
+    <option *ngFor="let property of properties" [value]="property.id">
+      {{ property.name }}
+    </option>
+  </select>
+</div>
