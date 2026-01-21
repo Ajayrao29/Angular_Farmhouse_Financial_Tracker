@@ -1,0 +1,51 @@
+<div class="login-container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow-lg border-0 rounded-4" style="max-width: 400px; width: 100%;">
+        <div class="card-body p-5">
+            <h2 class="text-center mb-4 fw-bold text-primary">Sign In</h2>
+            <p class="text-center text-muted mb-4">Welcome back to Farmhouse Tracker</p>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" formControlName="email"
+                        [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                        placeholder="name@example.com">
+                    <div class="invalid-feedback" *ngIf="loginForm.get('email')?.hasError('required')">
+                        Email is required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="loginForm.get('email')?.hasError('email')">
+                        Please enter a valid email
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password"
+                        [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                        placeholder="Enter your password">
+                    <div class="invalid-feedback">
+                        Password is required
+                    </div>
+                </div>
+
+                <div class="alert alert-danger" *ngIf="errorMessage">
+                    {{ errorMessage }}
+                </div>
+
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill"
+                        [disabled]="loginForm.invalid || isLoading">
+                        <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status"
+                            aria-hidden="true"></span>
+                        {{ isLoading ? 'Signing In...' : 'Sign In' }}
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <p class="mb-0 text-muted">Don't have an account? <a routerLink="/register"
+                            class="text-decoration-none fw-semibold">Register here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

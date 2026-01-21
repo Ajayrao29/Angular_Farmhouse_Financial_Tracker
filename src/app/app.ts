@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from './services/auth';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'farmhouse-tracker';
+  authService = inject(AuthService);
+
+  logout() {
+    this.authService.logout();
+  }
 }

@@ -1,0 +1,77 @@
+<div class="register-container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow-lg border-0 rounded-4" style="max-width: 500px; width: 100%;">
+        <div class="card-body p-5">
+            <h2 class="text-center mb-4 fw-bold text-success">Register</h2>
+            <p class="text-center text-muted mb-4">Create your account to start tracking</p>
+
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" formControlName="name"
+                        [class.is-invalid]="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+                        placeholder="John Doe">
+                    <div class="invalid-feedback">
+                        Name is required
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" formControlName="email"
+                        [class.is-invalid]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                        placeholder="name@example.com">
+                    <div class="invalid-feedback" *ngIf="registerForm.get('email')?.hasError('required')">
+                        Email is required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="registerForm.get('email')?.hasError('email')">
+                        Please enter a valid email
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password"
+                        [class.is-invalid]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                        placeholder="Create a password">
+                    <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('required')">
+                        Password is required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('minlength')">
+                        Password must be at least 6 characters
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
+                        [class.is-invalid]="(registerForm.get('confirmPassword')?.invalid || registerForm.hasError('mismatch')) && registerForm.get('confirmPassword')?.touched"
+                        placeholder="Confirm your password">
+                    <div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('required')">
+                        Confirm Password is required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="registerForm.hasError('mismatch')">
+                        Passwords do not match
+                    </div>
+                </div>
+
+                <div class="alert alert-danger" *ngIf="errorMessage">
+                    {{ errorMessage }}
+                </div>
+
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-success btn-lg rounded-pill"
+                        [disabled]="registerForm.invalid || isLoading">
+                        <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status"
+                            aria-hidden="true"></span>
+                        {{ isLoading ? 'Creating Account...' : 'Register' }}
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <p class="mb-0 text-muted">Already have an account? <a routerLink="/login"
+                            class="text-decoration-none fw-semibold">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

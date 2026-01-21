@@ -13,49 +13,54 @@
   ],
   "transactions": [
     {
-      "id": "1",
-      "propertyId": 1,
+      "id": "86d2",
+      "propertyId": "2",
       "type": "income",
-      "category": "booking",
-      "amount": 15000,
-      "date": "2025-01-15",
-      "description": "Weekend Booking"
+      "category": "Booking",
+      "amount": 100000,
+      "date": "2026-01-31",
+      "description": "Get Together"
     },
     {
-      "id": "2",
-      "propertyId": 1,
-      "type": "expense",
-      "category": "maintenance",
-      "amount": 5000,
-      "date": "2025-01-10",
-      "description": "Garden Maintenance"
-    },
-    {
-      "id": "3",
-      "propertyId": 2,
+      "id": "65ef",
+      "propertyId": "1",
       "type": "income",
-      "category": "event",
-      "amount": 25000,
-      "date": "2025-01-20",
-      "description": "Corporate Event"
+      "category": "Booking",
+      "amount": 500000,
+      "date": "2026-01-22",
+      "description": "Bachelor Party"
     },
     {
-      "id": "4",
-      "propertyId": 2,
-      "type": "expense",
-      "category": "utilities",
-      "amount": 3000,
-      "date": "2025-01-12",
-      "description": "Electricity Bill"
-    },
-    {
-      "id": "17d6",
+      "id": "ba0b",
       "propertyId": "1",
       "type": "expense",
       "category": "Maintenance",
-      "amount": 100000,
+      "amount": 50000,
       "date": "2026-01-31",
-      "description": "None"
+      "description": "ARRANGEMENTS"
+    },
+    {
+      "id": "a040",
+      "propertyId": "2",
+      "type": "expense",
+      "category": "Maintenance",
+      "amount": 45000,
+      "date": "2026-01-31",
+      "description": "ARRANGEMENTS"
+    }
+  ],
+  "users": [
+    {
+      "id": "d406",
+      "name": "Ajay Lingampalli",
+      "email": "ajayrao1294@gmail.com",
+      "password": "Ajayrao#G1"
+    },
+    {
+      "id": "8af7",
+      "name": "John Doe",
+      "email": "admin@findash.com",
+      "password": "admin123"
     }
   ]
 }
