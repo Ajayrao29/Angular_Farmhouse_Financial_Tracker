@@ -57,3 +57,29 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+Output images:
+
+<img width="1883" height="1004" alt="image" src="https://github.com/user-attachments/assets/db021ac8-66ba-46ba-89a9-dcbfee02d91f" />
+----------
+<img width="1914" height="995" alt="image" src="https://github.com/user-attachments/assets/5eeba0aa-a512-4566-8245-e49c5043858d" />
+------------
+<img width="1914" height="1030" alt="image" src="https://github.com/user-attachments/assets/4939b96b-3027-4cc7-9f49-2bfc478397c4" />
+----------
+<img width="1794" height="656" alt="image" src="https://github.com/user-attachments/assets/f2fd3afc-a823-4f31-9bac-fc343bb60839" />
+----------
+<img width="1914" height="620" alt="image" src="https://github.com/user-attachments/assets/0b79d58a-03e3-4a44-916a-78bd959d33f4" />
+----------
+<img width="1919" height="600" alt="image" src="https://github.com/user-attachments/assets/4f22ffcc-0954-4469-87f6-d1b12478b8b5" />
+---------
+<img width="1917" height="612" alt="image" src="https://github.com/user-attachments/assets/bf2023c8-7976-4b5f-9729-2d793feb70c1" />
+----------
+<img width="1916" height="699" alt="image" src="https://github.com/user-attachments/assets/727c4a64-2730-4e5b-9698-19ac84302120" />
+
+
+
+
+
+
+
